@@ -5,7 +5,21 @@ struct node {
   int data;
   Node *link;
 };
-
+// funtion for traversing a linked list
+int traverseLinkedList(const Node *head) {
+  int count = 0;
+  if (head == NULL)
+    printf("Empty linked list!");
+  else {
+    Node *current = head;
+    while (current) {
+      printf("%d ", current->data);
+      current = current->link;
+      count++;
+    }
+  }
+  return count ;
+}
 
 int main(int argc, char const *argv[]) {
   Node *head = NULL;
@@ -29,6 +43,8 @@ int main(int argc, char const *argv[]) {
   head->link->link = current;
   printf("data of node3 : %d\n", head->link->link->data);
 
+  
+  traverseLinkedList(head) ;
 
   return 0;
 }
