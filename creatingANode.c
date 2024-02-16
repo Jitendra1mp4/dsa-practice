@@ -13,21 +13,21 @@ int main(int argc, char const *argv[]) {
   current->link = NULL ;
   head = current ;
 
-  printf("data of node1 %d\n",head->data) ;
+  printf("data of node1 : %d\n",head->data) ;
 
   current = (Node *)malloc(sizeof(Node)) ;
   current->data = 6 ;
   current->link = NULL ;
 
   head->link = current ;
-  printf("data of node2 %d\n",head->link->data);
+  printf("data of node2 : %d\n",head->link->data);
 
 
   current = (Node *) malloc(sizeof(Node)) ;
   current->data = 12 ;
   current->link = NULL ;
   head->link->link = current ;
-  printf("data of node3 %d\n",head->link->link->data);
+  printf("data of node3 : %d\n",head->link->link->data);
 
   return 0;
 }
