@@ -3,14 +3,24 @@
 typedef struct node Node;
 struct node {
   int data;
-  Node *next;
+  Node *link;
 };
 
 int main(int argc, char const *argv[]) {
   Node *head = NULL;
-  head = (Node *)malloc(sizeof(Node));
-  head->data = 5;
-  head->next = NULL;
-  printf("data : %d\n", head->data);
+  Node *current = (Node *)malloc(sizeof(Node));
+  current->data = 5 ;
+  current->link = NULL ;
+  head = current ;
+
+  printf("data of node1 %d\n",head->data) ;
+
+  current = (Node *)malloc(sizeof(Node)) ;
+  current->data = 6 ;
+  current->link = NULL ;
+
+  head->link = current ;
+  printf("data of node2 %d\n",head->link->data);
+
   return 0;
 }
